@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #87ceeb;
+
+  .content {
+    text-align: center;
+    h1 {
+      color: #fff;
+    }
+  }
+}
+$gap: 50px;
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  grid-gap: $gap;
+  padding: $gap;
+
+  @media (min-width: 651px) and (max-width: 1279px) {
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+  }
+
+  @media (max-width: 650px) {
+    grid-template-columns: repeat(1, minmax(100%, 1fr));
+  }
+
+  .grid-cell {
+    min-height: 100px;
+    background-color: lightblue;
+    position: relative;
+
+    .tooltip {
+      display: none;
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 5px;
+    }
+
+    &:hover .tooltip {
+      display: block;
+    }
+  }
+}
+.table {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  input {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+  }
+  thead {
+    border-bottom: 1px solid #ccc;
+    th {
+      border-bottom: 1px solid #ccc;
+      padding: 5px;
+      span {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+      text-align: center;
+    }
+  }
+  td {
+    text-align: center;
+  }
+}
